@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-repo-3
+  labels:
+    app: example-repo-3
+    backstage.io/kubernetes-id: example-repo-3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-repo-3
+  template:
+    metadata:
+      labels:
+        app: example-repo-3
+        backstage.io/kubernetes-id: example-repo-3
+    spec:
+      containers:
+        - name: example-repo-3
+          image: backstageadmin/example-repo-3:1.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+
